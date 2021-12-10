@@ -1,0 +1,28 @@
+<h1>サイコロをふろう</h1>
+<p id='saikoro-number'>
+    1
+</p>
+<button id='saikoro-start' onclick='startSaikoro()'>振る！</button>
+<button id='saikoro-stop' onclick='stopSaikoro()'> 止める！</button>
+
+
+<button id='saikoro-max' onclick='maxSaikoro()'> zuru！</button>
+<script>
+var interval;
+function startSaikoro(){
+    var saikoroNumber = document.getElementById('saikoro-number')
+    var numbers =[1,2,3,4,5,6];
+    interval=setInterval(function(){
+        saikoroNumber.innerHTML =numbers[Math.floor(Math.random() * numbers.length)];
+    }, 10);
+    
+}
+function stopSaikoro(){
+    clearInterval(interval);
+}
+function maxSaikoro(){
+    var saikoroNumber = document.getElementById('saikoro-number')
+    saikoroNumber.innerHTML =6;
+    clearInterval(interval);
+}
+</script>
